@@ -1,20 +1,13 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import AppNavContainer from './src/navigations';
+import * as React from "react";
+import AppNavContainer from "./src/navigations";
+import GlobalProvider from "./src/context/Provider";
 
-export default function App() {
+const App = () => {
   return (
-    <AppNavContainer />
-  ); 
-}
+    <GlobalProvider>
+      <AppNavContainer />
+    </GlobalProvider>
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
